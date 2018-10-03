@@ -18,8 +18,8 @@ namespace CodingChallenge.PirateSpeak
             
             // basically, we're looking for anagrams
             // we can reason that any 2 words can be alphebetised and compared to see if they are anagrams
-            var alphabetisedInput = GetAlphabetisedString(jumble);
-            return dictionary.Where(word => string.Equals(GetAlphabetisedString(word), alphabetisedInput))
+            var alphabetisedInput = GetAlphabetizedString(jumble);
+            return dictionary.Where(word => string.Equals(GetAlphabetizedString(word), alphabetisedInput))
                              .ToArray();
         }
 
@@ -41,7 +41,7 @@ namespace CodingChallenge.PirateSpeak
                              .Any(wordLength => wordLength == input.Length);
         }
 
-        string GetAlphabetisedString(string input)
+        string GetAlphabetizedString(string input)
         {
             var inputChars = input.ToCharArray();
             Array.Sort<char>(inputChars);

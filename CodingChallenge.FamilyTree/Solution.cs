@@ -17,8 +17,8 @@ namespace CodingChallenge.FamilyTree
             if (!(bool)person.Descendants?.Any()) return string.Empty;
             foreach (var descendant in person.Descendants)
             {
-                var resultFromAllDescendents = GetBirthMonth(descendant, descendantName);
-                if (!string.IsNullOrWhiteSpace(resultFromAllDescendents)) return resultFromAllDescendents;
+                var resultFromAllDescendants = GetBirthMonth(descendant, descendantName);
+                if (!string.IsNullOrWhiteSpace(resultFromAllDescendants)) return resultFromAllDescendants;
             }
             return string.Empty;
         }
