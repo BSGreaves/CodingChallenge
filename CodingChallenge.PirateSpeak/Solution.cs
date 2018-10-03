@@ -13,7 +13,7 @@ namespace CodingChallenge.PirateSpeak
         {
             // when you can, scrub your inputs
             if (!IsValidInput(jumble) ||
-                !InputHasValidDictionaryMatch(jumble, dictionary))
+                !InputHasPossibleDictionaryMatch(jumble, dictionary))
                 return null;
             
             // basically, we're looking for anagrams
@@ -35,7 +35,7 @@ namespace CodingChallenge.PirateSpeak
 
         // Why use this function? The name is Self-documenting. 
         // Devs can skim the function name without trying to parse line after line of linq
-        bool InputHasValidDictionaryMatch(string input, string[] dictionary)
+        bool InputHasPossibleDictionaryMatch(string input, string[] dictionary)
         {
             return dictionary.Select(word => word.Length)
                              .Any(wordLength => wordLength == input.Length);
